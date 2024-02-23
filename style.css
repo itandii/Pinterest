@@ -1,0 +1,68 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+button {
+    background-color: #e41d98;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #d61789; /* Cambia el color al hacer hover */
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+/* Estilo para resaltar los promedios */
+.average {
+    font-weight: bold;
+    color: #e41d98; /* Color azul */
+}
+
+/* Estilo para resaltar la lista de alumnos ordenados */
+.sorted-list-item {
+    background-color: #f7f7f7; /* Fondo gris claro */
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+
+/* Estilos para los contenedores de las listas */
+    .contenedore {
+            display: inline-block;
+            margin-right: 20px; /* Espacio entre cada lista */
+            vertical-align: left; /* Alineación superior */
+    }
+/* Estilos para las listas */
+    ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+    }
+    li {
+            margin-bottom: 5px; /* Espacio entre elementos de la lista */
+    }

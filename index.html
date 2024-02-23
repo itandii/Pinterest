@@ -3,171 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinterest 2.0</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Clase DEV.F</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<header>
-    <nav>
-
-        <div>
-            <a href="https://www.pinterest.es/" style="display: inline">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" class="Logoo">
-            </a>          
-            <input type="button" value="Inicio" style="display: inline" class="boton">
-            <input type="button" value="Explorar" style="display: inline" class="boton-2">
-            <input type="button" value="Crear" style="display: inline" class="boton-2">
-            <input type="search" placeholder="    Buscar" style="display: inline;" class="finder">
-            <img src="https://i.postimg.cc/5ysCMsM7/3.png" class="Logoo">
-            <img src="https://i.postimg.cc/nzYm3HSt/2.png" class="Logoo">
-            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="" class="Logoo">
-         
-          </div>
-          
-    </nav> 
-    </header>
-    
-    <div class="xd"> </div>
-
 <body>
-    <section class="container-photos">
-            <div class="row">
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/18609432/pexels-photo-18609432/free-photo-of-moda-amor-gente-mujer.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                        <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/18609436/pexels-photo-18609436/free-photo-of-comida-madera-crepusculo-azucar.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/2128249/pexels-photo-2128249.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/18792337/pexels-photo-18792337/free-photo-of-casas-casa-apilar-bengala.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/2376712/pexels-photo-2376712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/2246789/pexels-photo-2246789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-            </div>
+    <div class="container">
+        <h1>Alumnos de una clase</h1>
+        <form id="student-form" onsubmit="addStudent(event)">
+            <label for="name">Nombre(s):</label>
+            <input type="text" id="name" required>
+            <label for="surname">Apellidos:</label>
+            <input type="text" id="surname" required>
+            <label for="age">Edad:</label>
+            <input type="number" id="age" required min="0">
+            <button type="submit">Agregar estudiante</button>
 
-            <div class="row">
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/3243020/pexels-photo-3243020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/18871959/pexels-photo-18871959/free-photo-of-francia-punto-de-referencia-paris-torre.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/3750893/pexels-photo-3750893.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/18821428/pexels-photo-18821428/free-photo-of-restaurante-edificios-italia-mesas.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/2079246/pexels-photo-2079246.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
+            <div id="LISTA2">
+                <!-- Aquí se mostrarán los estudiantes -->
             </div>
+        </form>
+        
+        
+        <!-- Formulario para inscribir un alumno a una clase -->
+        <h2>Inscribir alumnos</h2>
+        <form id="enroll-form">
+            <label for="select-student">Seleccionar estudiante:</label>
+            <select id="select-student">
+                <!-- Aquí puedes agregar opciones de alumnos -->
+                Sasha Hernandez Benitez
+                Alison Carrada Gutierrez
+                Carlos Alberto del Villar Montes
+                Isaac Diaz Jarquin
+                Luz Andrea Cruz
+                William Herondale
+                James Carstairs
+                Cristhian Diaz Morales
+                Irina Peñalva
+                Joe Bennet
+                Alexander Gabriel Claremont Diaz
+                Henry of Wales
+                Olivia Rodrigo
+                Taylor Swift
 
-            <div class="row">
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/15435631/pexels-photo-15435631/free-photo-of-animal-sentado-mascotas-gato.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/5011967/pexels-photo-5011967.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/6377796/pexels-photo-6377796.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/18786884/pexels-photo-18786884/free-photo-of-mujer-calle-grafiti-musica.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/15976792/pexels-photo-15976792/free-photo-of-ciudad-calle-grafiti-edificio.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/12028960/pexels-photo-12028960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-            </div>
+            </select>
+            <label for="select-group">Seleccionar clase:</label>
+            <select id="select-group">
+                <!-- Aquí puedes agregar opciones de clases -->
+                Ciencias Naturales 
+                Matemáticas
+                Inglés
+                Español
+                Geografía
+                Historia
+            </select>          
 
-            <div class="row">
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/12295527/pexels-photo-12295527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/12263647/pexels-photo-12263647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/12290352/pexels-photo-12290352.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/12168652/pexels-photo-12168652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/3551805/pexels-photo-3551805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/5634767/pexels-photo-5634767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-            </div>
+            <button type="submit">Inscribir</button>
+            <div id="enrollment-info"></div>
 
-            <div class="row">
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/5493447/pexels-photo-5493447.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/8935911/pexels-photo-8935911.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/6788000/pexels-photo-6788000.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/8752654/pexels-photo-8752654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/6287300/pexels-photo-6287300.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-                <div class="photo">
-                    <a href="#"> <img src="https://images.pexels.com/photos/7175450/pexels-photo-7175450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></a>
-                    <button class="save"> Guardar </button>
-                </div>
-            </div>
-    </section>
+        </form>
+
+        <!-- Formulario para asignar calificaciones -->
+        <h2>Asignar calificaciones</h2>
+        <form id="grades-form">
+            <label for="select-student-grades">Seleccionar estudiante:</label>
+            <select id="select-student-grades">
+                <!-- Aquí puedes agregar opciones de alumnos -->
+                Sasha Hernandez Benitez
+                Alison Carrada Gutierrez
+                Carlos Alberto del Villar Montes
+                Isaac Diaz Jarquin
+                Luz Andrea Cruz
+                William Herondale
+                James Carstairs
+                Cristhian Diaz Morales
+                Irina Peñalva
+                Joe Bennet
+                Alexander Gabriel Claremont Diaz
+                Henry of Wales
+                Olivia Rodrigo
+                Taylor Swift
+            </select>
+            <label for="grades">Calificaciones:</label>
+            <input type="number" id="grades" placeholder="Ingresar calificaciones" min="0" max="10">
+            <button type="submit">Asignar calificaciones</button>
+        </form>
+        <div id="grades-info"></div>
+
+        <!-- Formulario para crear grupos y asignar alumnos -->
+        <h2>Crear grupos y asignar alumnos</h2>
+        <form id="group-form">
+            <label for="group-name">Grupo:</label>
+            <input type="number" id="group-name" placeholder="Ingresar grupo" min="301" max="310">
+            <label for="select-students">Seleccionar estudiantes:</label>
+            <select id="select-students" multiple>
+                <!-- Aquí puedes agregar opciones de alumnos -->
+                Sasha Hernandez Benitez
+                Alison Carrada Gutierrez
+                Carlos Alberto del Villar Montes
+                Isaac Diaz Jarquin
+                Luz Andrea Cruz
+                William Herondale
+                James Carstairs
+                Cristhian Diaz Morales
+                Irina Peñalva
+                Joe Bennet
+                Alexander Gabriel Claremont Diaz
+                Henry of Wales
+                Olivia Rodrigo
+                Taylor Swift
+            </select>
+            <button type="submit">Crear grupo</button>
+        </form>
+
+        <div id="output"></div>
     
+            <h1>Buscar</h1>
+          
+          <!-- Contenedor de la primera lista -->
+    <div class="contenedore">
+        <h2>Nombre(s)</h2>
+        <ul>
+            <li>Alison</li>
+            <li>Carlos Alberto </li>
+            <li>Isaac</li>
+            <li>Luz Andrea </li>
+            <li>William</li>
+            <li>James </li>
+            <li>Cristhian </li>
+            <li>Irina </li>
+            <li>Joe </li>
+            <li>Alexander Gabriel</li>
+            <li>Henry</li>
+            <li>Olivia</li>
+            <li>Taylor </li>
+        </ul>
+    </div>
+    <!-- Contenedor de la segunda lista -->
+    <div class="contenedore">
+        <h2>Apellidos</h2>
+        <ul>
+            <li>Carrada Gutierrez</li>
+            <li> del Villar Montes </li>
+            <li>Diaz Jarquin</li>
+            <li>Cruz  </li>
+            <li>Herondale</li>
+            <li>Carstairs </li>
+            <li>Diaz Morales </li>
+            <li>Peñalva </li>
+            <li>Bennet </li>
+            <li> Claremont Diaz</li>
+            <li>of Wales</li>
+            <li>Rodrigo</li>
+            <li>Swift </li>
+        </ul>
+    </div>
+    <!-- Contenedor de la tercera lista -->
+    <div class="contenedore">
+        <h2>Clase 1</h2>
+        <ul>
+            <li>Ciencias Naturales</li>
+            <li>Matemáticas</li>
+            <li>Matemáticas</li>
+            <li>Inglés</li>
+            <li>Inglés</li>
+            <li>Inglés</li>
+            <li>Español</li>
+            <li>Español</li>
+            <li>Geografía</li>
+            <li>Geografía</li>
+            <li>Inglés</li>
+            <li>Historia</li>
+            <li>Historia</li>
+        </ul>
+    </div>
+    <!-- Contenedor de la cuarta lista -->
+    <div class="contenedore">
+        <h2>Calificación 1</h2>
+        <ul>
+            <li>10</li>
+            <li>9</li>
+            <li>9.5</li>
+            <li>10</li>
+            <li>8</li>
+            <li>7</li>
+            <li>9</li>
+            <li>9</li>
+            <li>10</li>
+            <li>9</li>
+            <li>8</li>
+            <li>10</li>
+            <li>10</li>
+        </ul>
+    </div>
+
+    <!-- Contenedor de la tercera lista -->
+    <div class="contenedore">
+        <h2>Clase 2</h2>
+        <ul>
+            <li>Español</li>
+            <li>Español</li>
+            <li>Geografía</li>
+            <li>Geografía</li>
+            <li>Inglés</li>
+            <li>Historia</li>
+            <li>Historia</li>
+            <li>Ciencias Naturales</li>
+            <li>Matemáticas</li>
+            <li>Matemáticas</li>
+            <li>Inglés</li>
+            <li>Inglés</li>
+            <li>Inglés</li>
+            
+        </ul>
+    </div>
+    <!-- Contenedor de la cuarta lista -->
+    <div class="contenedore">
+        <h2>Calificación 2</h2>
+        <ul>
+            <li>7</li>
+            <li>9</li>
+            <li>9</li>
+            <li>10</li>
+            <li>9</li>
+            <li>8</li>
+            <li>10</li>
+            <li>10</li>
+            <li>10</li>
+            <li>9</li>
+            <li>9.5</li>
+            <li>10</li>
+            <li>8</li>
+            
+        </ul>
+    </div>
 
 
+    <!-- Contenedor de la quinta lista -->
+    <div class="contenedore">
+        <h2>Grupo</h2>
+        <ul>
+            <li>301</li>
+            <li>301</li>
+            <li>304</li>
+            <li>308</li>
+            <li>308</li>
+            <li>308</li>
+            <li>304</li>
+            <li>305</li>
+            <li>305</li>
+            <li>301</li>
+            <li>301</li>
+            <li>304</li>
+            <li>305</li>
+        </ul>
+    </div>    
+
+    <h2>Buscar por Nombre:</h2>
+    <input type="text" id="buscar-nombre">
+    <button onclick="buscarPorNombre()">Buscar</button>
+    <!-- Otras operaciones y botones -->
+
+    <div id="resultados"></div>
+
+                <!-- Formulario de búsqueda por nombre -->
+                <h2>Buscar por nombre</h2>
+                <input type="text" id="search-name" placeholder="Ingresa nombre">
+                <button onclick="searchByName()">Buscar</button>
+        
+                <!-- Formulario de búsqueda por apellido -->
+                <h2>Buscar por apellido</h2>
+                <input type="text" id="search-surname" placeholder="Ingresar apellido">
+                <button onclick="searchBySurname()">Buscar</button>
+        
+                <!-- Botones para obtener promedio de alumno y grupo -->
+                <h2>Obtener promedio</h2>
+                <button onclick="getStudentAverage()">Promedio del estudiante</button>
+                <button onclick="getGroupAverage()">Promedio del grupo</button>
+        
+                <!-- Botones para ordenar la lista de alumnos -->
+                <h2>Ordenar lista de estudiantes</h2>
+                <button onclick="sortAscending()">A -> Z</button>
+                <button onclick="sortDescending()">Z -> A</button>
+        
+                <!-- Áreas para mostrar resultados -->
+                <div id="results"></div>
+            </div>
+    
+    </div>
+
+        
+    <script src="script.js"></script>
 </body>
 </html>
+
